@@ -1,0 +1,109 @@
+@import '../../global-styles.less';
+
+.regular-field-wrapper {
+    &:extend(.global-field-style);
+
+    border-radius: 3px;
+    margin-bottom: 10px;
+
+    .field-value {
+        max-width: 800px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: pre;
+    }
+
+    &:hover {
+        background: #FAFAF8;
+    }
+
+    &.different-value {
+        background: #FCFAE2;
+    }
+
+    &.deleted-value {
+        opacity: 0.5;
+    }
+
+    .label {
+        display: inline-block;
+        text-align: left;
+        min-width: 110px;
+        max-width: 110px;
+        overflow: hidden;
+        color: rgba(0, 0, 0, 0.65);
+        font-size: 14px;
+
+        .required-icon {
+            margin-left: 2px;
+            color: red;
+        }
+
+        .aspect-not-aligned, .single-value-warning {
+            margin-left: 8px;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .importance-level {
+            font-size: 12px;
+            font-family: helvetica;
+            font-weight: 300;
+
+            >span {
+                margin-left: 2px;
+            }
+        }
+    }
+
+    .input-wrapper {
+
+        .input-inner-wrapper {
+            display: flex;
+        }
+        .ant-select {
+            min-width: 650px;
+        }
+
+        .actions-wrapper {
+            display: inline-block;
+
+            button {
+                margin-left: 5px;
+                border: 0;
+            }
+        }
+    }
+       
+}
+
+.aspect-title-wrapper {
+    display: inline-block;
+    text-align: left;
+    padding-right: 10px;
+    min-width: 210px;
+    max-width: 210px;
+    display: inline-block;
+    overflow-wrap: break-word;
+
+    .required-icon {
+        margin-left: 2px;
+        color: red;
+    }
+
+    .aspect-not-aligned, .single-value-warning {
+        margin-left: 8px;
+        color: #999;
+        font-size: 16px;
+    }
+
+    .importance-level {
+        font-size: 12px;
+        font-family: helvetica;
+        font-weight: 300;
+
+        >span {
+            margin-left: 2px;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gizmo shared - RegularField 1`] = `
+<div
+  className="regular-field-wrapper"
+>
+  <strong>
+    <label
+      className="label"
+    >
+      Title
+    </label>
+  </strong>
+  <span>
+    101738591
+  </span>
+</div>
+`;

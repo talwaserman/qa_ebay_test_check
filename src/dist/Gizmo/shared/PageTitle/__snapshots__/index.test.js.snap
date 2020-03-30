@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gizmo shared - PageTitle 1`] = `
+<div
+  className="page-title-wrapper"
+>
+  <div>
+    <label>
+      Product Duplicate
+    </label>
+     - 
+    <span>
+      Nike shoes task
+    </span>
+  </div>
+</div>
+`;

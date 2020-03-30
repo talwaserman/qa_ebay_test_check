@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gizmo shared - DecisionPopOver 1`] = `
+<div
+  className="decision-popup-content"
+>
+  <label>
+    Comment:
+    <span
+      className="mandatory"
+    >
+      *
+    </span>
+  </label>
+  <textarea
+    className="ant-input"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    rows={4}
+    style={Object {}}
+    value=""
+  />
+  <br />
+  <br />
+  <section
+    className="action-btn"
+  >
+    <button
+      className="ant-btn ant-btn-sm"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Cancel
+      </span>
+    </button>
+    <button
+      className="ant-btn ant-btn-primary ant-btn-sm"
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Save
+      </span>
+    </button>
+  </section>
+</div>
+`;

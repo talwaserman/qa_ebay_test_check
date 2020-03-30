@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gizmo shared - RemoteSelect 1`] = `
+<div
+  className="remote-select-wrapper"
+>
+  <div
+    className="ant-select ant-select-enabled ant-select-no-arrow"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseOut={[Function]}
+    onMouseUp={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      aria-autocomplete="list"
+      aria-controls="test-uuid"
+      aria-expanded={false}
+      aria-haspopup="true"
+      className="ant-select-selection
+            ant-select-selection--single"
+      onKeyDown={[Function]}
+      role="combobox"
+      tabIndex={0}
+    >
+      <div
+        className="ant-select-selection__rendered"
+      >
+        <div
+          className="ant-select-selection__placeholder"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "WebkitUserSelect": "none",
+              "display": "block",
+              "userSelect": "none",
+            }
+          }
+          unselectable="on"
+        >
+          enter search value
+        </div>
+        <div
+          className="ant-select-search ant-select-search--inline"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        >
+          <div
+            className="ant-select-search__field__wrap"
+          >
+            <input
+              autoComplete="off"
+              className="ant-select-search__field"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              value=""
+            />
+            <span
+              className="ant-select-search__field__mirror"
+            >
+              
+               
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

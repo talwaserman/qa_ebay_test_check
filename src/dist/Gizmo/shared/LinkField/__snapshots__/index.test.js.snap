@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gizmo shared - LinkField 1`] = `
+<div
+  className="link-field-wrapper"
+>
+  <strong>
+    <label
+      className="label"
+    >
+      Title
+    </label>
+  </strong>
+  <a
+    href="http://google.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    101738591
+  </a>
+</div>
+`;

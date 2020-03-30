@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gizmo shared - Template 1`] = `
+<div
+  className="template-wrapper"
+>
+  This is a template for new components
+</div>
+`;

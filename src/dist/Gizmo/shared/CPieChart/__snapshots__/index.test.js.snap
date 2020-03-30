@@ -1,0 +1,356 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gizmo shared - CPieChart 1`] = `
+<div
+  className="piechart-wrapper"
+>
+  <div
+    className="piechart-label"
+  >
+    Task Statistics
+  </div>
+  <div
+    className="recharts-wrapper"
+    style={
+      Object {
+        "cursor": "default",
+        "height": 400,
+        "position": "relative",
+        "width": 800,
+      }
+    }
+  >
+    <svg
+      className="recharts-surface"
+      height={400}
+      version="1.1"
+      viewBox="0 0 800 400"
+      width={800}
+    >
+      <defs>
+        <clipPath
+          id="recharts1-clip"
+        >
+          <rect
+            height={390}
+            width={790}
+            x={5}
+            y={5}
+          />
+        </clipPath>
+      </defs>
+      <g
+        className="recharts-layer recharts-pie"
+      >
+        <g
+          className="recharts-layer recharts-pie-sector"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <path
+            className="recharts-sector"
+            d="M 385,205
+    A 80,80,0,
+    0,0,
+    265,135.7179676972449
+  L 275,153.03847577293368
+            A 60,60,0,
+            0,1,
+            365,205 Z"
+            fill="#ffe700"
+            stroke="#fff"
+          />
+        </g>
+        <g
+          className="recharts-layer recharts-pie-sector"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <path
+            className="recharts-sector"
+            d="M 265,135.7179676972449
+    A 80,80,0,
+    0,0,
+    264.99999999999994,274.28203230275506
+  L 275,256.9615242270663
+            A 60,60,0,
+            0,1,
+            275,153.03847577293368 Z"
+            fill="#edf0f4"
+            stroke="#fff"
+          />
+        </g>
+        <g
+          className="recharts-layer recharts-pie-sector"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <path
+            className="recharts-sector"
+            d="M 264.99999999999994,274.28203230275506
+    A 80,80,0,
+    0,0,
+    385,205.00000000000003
+  L 365,205.00000000000003
+            A 60,60,0,
+            0,1,
+            275,256.9615242270663 Z"
+            fill="#2cd9c5"
+            stroke="#fff"
+          />
+        </g>
+        <g
+          className="recharts-layer recharts-pie-labels"
+        >
+          <g
+            className="recharts-layer"
+          >
+            <path
+              className="recharts-curve recharts-pie-label-line"
+              d="M345,135.71796769724492L355,118.39745962155614"
+              fill="none"
+              stroke="#ffe700"
+            />
+            <g>
+              <text
+                dy={8}
+                fill="#5a687b"
+                textAnchor="middle"
+                x={305}
+                y={195}
+              >
+                6
+              </text>
+              <text
+                dy={8}
+                fill="#505d6f"
+                style={
+                  Object {
+                    "height": "27px",
+                    "width": "107.5px",
+                  }
+                }
+                textAnchor="middle"
+                x={305}
+                y={215}
+              >
+                Total
+              </text>
+              <path
+                className="recharts-sector"
+                d="M 385,205
+    A 80,80,0,
+    0,0,
+    265,135.7179676972449
+  L 275,153.03847577293368
+            A 60,60,0,
+            0,1,
+            365,205 Z"
+                fill="#ffe700"
+              />
+              <path
+                d="M350,127.05771365940052L360,109.73720558371176L382,109.73720558371176"
+                fill="none"
+                stroke="#ffe700"
+              />
+              <circle
+                cx={382}
+                cy={109.73720558371176}
+                fill="#ffe700"
+                r={2}
+                stroke="none"
+              />
+              <text
+                fill="#333"
+                textAnchor="start"
+                x={394}
+                y={109.73720558371176}
+              >
+                In Progress
+              </text>
+              <text
+                dy={18}
+                fill="#999"
+                style={
+                  Object {
+                    "fontSize": "12px",
+                  }
+                }
+                textAnchor="start"
+                x={394}
+                y={109.73720558371176}
+              >
+                2 (33%)
+              </text>
+            </g>
+          </g>
+          <g
+            className="recharts-layer"
+          >
+            <path
+              className="recharts-curve recharts-pie-label-line"
+              d="M225,205L205,205"
+              fill="none"
+              stroke="#edf0f4"
+            />
+            <g>
+              <text
+                dy={8}
+                fill="#5a687b"
+                textAnchor="middle"
+                x={305}
+                y={195}
+              >
+                6
+              </text>
+              <text
+                dy={8}
+                fill="#505d6f"
+                style={
+                  Object {
+                    "height": "27px",
+                    "width": "107.5px",
+                  }
+                }
+                textAnchor="middle"
+                x={305}
+                y={215}
+              >
+                Total
+              </text>
+              <path
+                className="recharts-sector"
+                d="M 265,135.7179676972449
+    A 80,80,0,
+    0,0,
+    264.99999999999994,274.28203230275506
+  L 275,256.9615242270663
+            A 60,60,0,
+            0,1,
+            275,153.03847577293368 Z"
+                fill="#edf0f4"
+              />
+              <path
+                d="M215,205L195,205L173,205"
+                fill="none"
+                stroke="#edf0f4"
+              />
+              <circle
+                cx={173}
+                cy={205}
+                fill="#edf0f4"
+                r={2}
+                stroke="none"
+              />
+              <text
+                fill="#333"
+                textAnchor="end"
+                x={161}
+                y={205}
+              >
+                Not Done
+              </text>
+              <text
+                dy={18}
+                fill="#999"
+                style={
+                  Object {
+                    "fontSize": "12px",
+                  }
+                }
+                textAnchor="end"
+                x={161}
+                y={205}
+              >
+                2 (33%)
+              </text>
+            </g>
+          </g>
+          <g
+            className="recharts-layer"
+          >
+            <path
+              className="recharts-curve recharts-pie-label-line"
+              d="M345,274.28203230275506L355,291.60254037844385"
+              fill="none"
+              stroke="#2cd9c5"
+            />
+            <g>
+              <text
+                dy={8}
+                fill="#5a687b"
+                textAnchor="middle"
+                x={305}
+                y={195}
+              >
+                6
+              </text>
+              <text
+                dy={8}
+                fill="#505d6f"
+                style={
+                  Object {
+                    "height": "27px",
+                    "width": "107.5px",
+                  }
+                }
+                textAnchor="middle"
+                x={305}
+                y={215}
+              >
+                Total
+              </text>
+              <path
+                className="recharts-sector"
+                d="M 264.99999999999994,274.28203230275506
+    A 80,80,0,
+    0,0,
+    385,205.00000000000003
+  L 365,205.00000000000003
+            A 60,60,0,
+            0,1,
+            275,256.9615242270663 Z"
+                fill="#2cd9c5"
+              />
+              <path
+                d="M350,282.9422863405995L360,300.2627944162882L382,300.2627944162882"
+                fill="none"
+                stroke="#2cd9c5"
+              />
+              <circle
+                cx={382}
+                cy={300.2627944162882}
+                fill="#2cd9c5"
+                r={2}
+                stroke="none"
+              />
+              <text
+                fill="#333"
+                textAnchor="start"
+                x={394}
+                y={300.2627944162882}
+              >
+                Done
+              </text>
+              <text
+                dy={18}
+                fill="#999"
+                style={
+                  Object {
+                    "fontSize": "12px",
+                  }
+                }
+                textAnchor="start"
+                x={394}
+                y={300.2627944162882}
+              >
+                2 (33%)
+              </text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;

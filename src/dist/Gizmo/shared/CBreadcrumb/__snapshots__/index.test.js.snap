@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gizmo shared - CBreadcrumb 1`] = `
+<div
+  className="breadcrumb-style"
+>
+  <span
+    className="path-items"
+  >
+    <span>
+      test
+       
+    </span>
+    <span>
+      test2
+       
+    </span>
+    <span>
+      test3
+       
+    </span>
+  </span>
+</div>
+`;

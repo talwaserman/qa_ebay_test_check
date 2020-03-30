@@ -1,0 +1,357 @@
+"use strict";
+
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+require("antd/es/popover/style/css");
+
+var _popover = _interopRequireDefault(require("antd/es/popover"));
+
+require("antd/es/button/style/css");
+
+var _button = _interopRequireDefault(require("antd/es/button"));
+
+require("antd/es/tooltip/style/css");
+
+var _tooltip = _interopRequireDefault(require("antd/es/tooltip"));
+
+require("antd/es/icon/style/css");
+
+var _icon = _interopRequireDefault(require("antd/es/icon"));
+
+require("antd/es/notification/style/css");
+
+var _notification2 = _interopRequireDefault(require("antd/es/notification"));
+
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
+
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _utils = require("../../utils");
+
+var _NoUmsInput = _interopRequireDefault(require("./NoUmsInput"));
+
+var _UmsInput = _interopRequireDefault(require("./UmsInput"));
+
+var _ReasonSelect = _interopRequireDefault(require("./ReasonSelect"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+require("./style.less");
+
+/* eslint-disable */
+var Aspect = _react.default.memo(function AspectWrapper(_ref) {
+  var aspect = _ref.aspect,
+      placeholder = _ref.placeholder,
+      isMultiSelect = _ref.isMultiSelect,
+      showSuggestions = _ref.showSuggestions,
+      showOriginalValues = _ref.showOriginalValues,
+      aspectIdentifier = _ref.aspectIdentifier,
+      onAspectChange = _ref.onAspectChange,
+      differentValues = _ref.differentValues,
+      handleCopy = _ref.handleCopy,
+      hightHash = _ref.hightHash,
+      updateAspectHights = _ref.updateAspectHights;
+  var elemRef = (0, _react.useRef)(null);
+
+  var _useState = (0, _react.useState)(isValuesChanged()),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      changedValue = _useState2[0],
+      setChangedValue = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+      showSingleWarning = _useState4[0],
+      updateSingleWarning = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(false),
+      _useState6 = (0, _slicedToArray2.default)(_useState5, 2),
+      isShowingDeletePopover = _useState6[0],
+      updateDeletePopover = _useState6[1];
+
+  var getBlankAspectHight = (0, _react.useCallback)(function () {
+    if (showSuggestions && showOriginalValues) {
+      return '94px';
+    } else if (showSuggestions || showOriginalValues) {
+      return '73px';
+    } else {
+      return '59px';
+    }
+  }, [showSuggestions, showOriginalValues]);
+  (0, _react.useEffect)(function () {
+    verifyMultiValueMode((0, _toConsumableArray2.default)(aspect.propertyDecisionContract.suggestedValues));
+    updateDeletePopover(false);
+    updateAspectHights(aspect.aspectName, (elemRef.current || {}).offsetHeight);
+  }, [aspect]);
+  (0, _react.useEffect)(function () {
+    updateAspectHights(aspect.aspectName, (elemRef.current || {}).offsetHeight);
+  }, [showOriginalValues, showSuggestions]);
+  var AspectTitle = aspect.aspectName;
+  var currentValues = aspect.currentValues;
+  var crawlingData = aspect.crawlingData.values; //AspectMetadata information which extracted and calculated from aspectInformation // 
+
+  var aspectMetadata = (0, _utils.getAspectMetadata)(aspect.aspectInformation);
+  var isDeleted = aspect.propertyDecisionContract.status === "DELETED";
+  var deleteReason = aspect.propertyDecisionContract.deleteReason;
+  var styleClasses = "aspect-wrapper ".concat(differentValues ? "different-value" : "", " ").concat(changedValue ? "changed-value" : "", " ").concat(isDeleted ? "deleted-value" : "");
+
+  var openNotificationWithIcon = function openNotificationWithIcon(type, title, message) {
+    _notification2.default[type]({
+      message: title,
+      description: message
+    });
+  }; // if the aspect that we present contain this key with value false than we should hide it from the screen
+  // because this aspect is not available for that product
+
+
+  var showBlankAspect = aspect.alignedWithSurvivor !== undefined && aspect.alignedWithSurvivor === false;
+  var blankAspectHight = getBlankAspectHight();
+  return _react.default.createElement("div", {
+    className: "aspect-outer-wrapper",
+    ref: elemRef,
+    style: {
+      minHeight: hightHash[aspect.aspectName] + 'px'
+    }
+  }, isDeleted && _react.default.createElement("div", {
+    className: "deleted-aspect"
+  }, "Deleted", _react.default.createElement("span", null, " - ", deleteReason)), showBlankAspect && _react.default.createElement("div", {
+    className: "blank-aspect",
+    style: {
+      height: blankAspectHight
+    }
+  }), !showBlankAspect && _react.default.createElement("div", {
+    className: styleClasses
+  }, _react.default.createElement("div", {
+    className: "aspect-title-wrapper"
+  }, _react.default.createElement("label", null, _react.default.createElement("strong", null, AspectTitle, !aspectMetadata.umsAlignedAspect && _react.default.createElement(_tooltip.default, {
+    placement: "top",
+    title: "Aspect not aligned with UMS"
+  }, _react.default.createElement("span", {
+    className: "aspect-not-aligned"
+  }, _react.default.createElement(_icon.default, {
+    type: "info-circle"
+  }))), aspectMetadata.isRequired && _react.default.createElement("span", {
+    className: "required-icon"
+  }, "*"), showSingleWarning && _react.default.createElement(_tooltip.default, {
+    placement: "top",
+    title: "Single value mode is used with more then one value"
+  }, _react.default.createElement("span", {
+    className: "single-value-warning"
+  }, _react.default.createElement(_icon.default, {
+    type: "warning"
+  }))))), _react.default.createElement("div", {
+    className: "importance-level"
+  }, aspectMetadata.levelOfImportance, _react.default.createElement("span", null, aspectMetadata.isMultiValue ? "[M]" : ""))), _react.default.createElement("div", {
+    className: "input-wrapper"
+  }, _react.default.createElement("div", {
+    className: "input-inner-wrapper"
+  }, aspectMetadata.isWithUms && _react.default.createElement(_UmsInput.default, {
+    suggestedValues: aspect.propertyDecisionContract.suggestedValues,
+    umsValues: aspectMetadata.umsValues,
+    aspect: aspect,
+    onAspectChange: onAspectChange,
+    aspectIdentifier: aspectIdentifier,
+    checkAspectValuesDifference: checkAspectValuesDifference,
+    handleCopy: handleInputCopy
+  }), !aspectMetadata.isWithUms && _react.default.createElement(_NoUmsInput.default, {
+    suggestedValues: aspect.propertyDecisionContract.suggestedValues,
+    aspect: aspect,
+    isValueAlreadySelected: isValueAlreadySelected,
+    checkAspectValuesDifference: checkAspectValuesDifference,
+    onAspectChange: onAspectChange,
+    aspectIdentifier: aspectIdentifier,
+    handleCopy: handleInputCopy
+  }), _react.default.createElement("div", {
+    className: "actions-wrapper"
+  }, _react.default.createElement("div", {
+    className: "delete-btn-wrapper"
+  }, !isDeleted && _react.default.createElement(_popover.default, {
+    placement: "top",
+    content: _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_ReasonSelect.default, {
+      deleteAspect: deleteAspect
+    })),
+    trigger: "click",
+    visible: isShowingDeletePopover,
+    onVisibleChange: onVisibleChange
+  }, _react.default.createElement(_button.default, {
+    shape: "circle",
+    icon: "delete",
+    onClick: handleDeleteButton
+  })), isDeleted && _react.default.createElement(_button.default, {
+    shape: "circle",
+    icon: "rollback",
+    onClick: restoreAspect
+  })))), showSuggestions && _react.default.createElement("div", {
+    className: "crawling"
+  }, "Suggestions: ", " ", crawlingData.map(function (item) {
+    return _react.default.createElement("span", {
+      className: "crawling-suggestions",
+      key: item.value,
+      onClick: clickSuggestionHandler
+    }, item.value);
+  })), showOriginalValues && _react.default.createElement("div", {
+    className: "original-values"
+  }, _react.default.createElement("span", {
+    className: "title"
+  }, "Original values:"), currentValues.map(function (item) {
+    return _react.default.createElement("span", {
+      className: "original-value",
+      key: item.value,
+      onClick: clickSuggestionHandler
+    }, item.value);
+  })))));
+
+  function handleDeleteButton() {
+    var updatedState = aspect.propertyDecisionContract.status === "DELETED" ? false : !isShowingDeletePopover;
+    updateDeletePopover(updatedState);
+  }
+
+  function handleInputCopy(aspectValue) {
+    event.preventDefault();
+    handleCopy(aspectValue, aspect.aspectName, aspectIdentifier);
+  }
+
+  function onVisibleChange(visible) {
+    updateDeletePopover(visible);
+  }
+
+  function checkAspectValuesDifference(updatedValues) {
+    var check = false;
+
+    if (currentValues.length !== updatedValues.length) {
+      check = true;
+    } else {
+      var valueArray = currentValues.map(function (item) {
+        return item.value.toLowerCase();
+      });
+      var suggestedArray = updatedValues.map(function (item) {
+        return item.value.toLowerCase();
+      });
+      valueArray.forEach(function (value) {
+        if (!suggestedArray.includes(value.toLowerCase())) {
+          check = true;
+        }
+      });
+    }
+
+    setChangedValue(check);
+  }
+
+  function deleteAspect(deleteReason) {
+    var updatedAspect = Object.assign({}, aspect);
+    updatedAspect.propertyDecisionContract.changed = true;
+    updatedAspect.propertyDecisionContract.status = "DELETED";
+    updatedAspect.propertyDecisionContract.deleteReason = deleteReason;
+    onAspectChange(updatedAspect, aspectIdentifier);
+  }
+
+  function restoreAspect() {
+    var updatedState = aspect.propertyDecisionContract.status === "DELETED" ? false : !isShowingDeletePopover;
+    updateDeletePopover(updatedState);
+    var updatedAspect = Object.assign({}, aspect);
+    updatedAspect.propertyDecisionContract.changed = false;
+    updatedAspect.propertyDecisionContract.status = "NONE";
+    updatedAspect.propertyDecisionContract.deleteReason = null;
+    onAspectChange(updatedAspect, aspectIdentifier);
+  }
+
+  function isValuesChanged() {
+    var suggestedValues = aspect.propertyDecisionContract.suggestedValues.map(function (item) {
+      return item.value;
+    });
+    var originalValues = aspect.currentValues.map(function (item) {
+      return item.value;
+    });
+    return !(0, _utils.compareArray)(suggestedValues, originalValues);
+  } //make sure that the values in the array are distinct
+
+
+  function isValueAlreadySelected(values, value) {
+    var flage = false;
+    flage = values.map(function (item) {
+      return item.value;
+    }).includes(value);
+    flage && openNotificationWithIcon("info", "Value unique restriction", "".concat(value, " already selected"));
+    return flage;
+  }
+
+  function verifyMultiValueMode(updatedValues) {
+    if (updatedValues.length > 1 && !aspectMetadata.isMultiValue) {
+      updateSingleWarning(true);
+      openNotificationWithIcon("info", "Single mode violation", "".concat(aspect.aspectName, " should contain a single value"));
+    } else {
+      updateSingleWarning(false);
+    }
+  }
+
+  function clickSuggestionHandler(e) {
+    var value = e.target.textContent;
+    var tempValues = (0, _toConsumableArray2.default)(aspect.propertyDecisionContract.suggestedValues);
+
+    if (isValueAlreadySelected((0, _toConsumableArray2.default)(tempValues), value) || value === '') {
+      return;
+    }
+
+    tempValues.push({
+      value: value,
+      information: {
+        umsAlignedValue: aspectMetadata.umsValues.map(function (item) {
+          return item.toLowerCase();
+        }).includes(value.toLowerCase()) ? true : false,
+        crawlingValue: false
+      }
+    });
+    checkAspectValuesDifference(tempValues); //verifyMultiValueMode(tempValues);
+
+    var updatedAspect = (0, _utils.copyObject)(aspect);
+    updatedAspect.propertyDecisionContract.suggestedValues = tempValues;
+    onAspectChange(updatedAspect, aspectIdentifier);
+  }
+});
+
+Aspect.propTypes = {
+  /** Placeholder telling the user what should be placed in this input */
+  placeholder: _propTypes.default.string,
+
+  /** Aspect data required to show that input field */
+  aspect: _propTypes.default.object.isRequired,
+
+  /** is this aspect multi select */
+  isMultiSelect: _propTypes.default.bool,
+
+  /** should show suggestions */
+  showSuggestions: _propTypes.default.bool,
+
+  /** This is the identifier key of the aspect example: additional aspects, both aspects, identifiers etc. */
+  aspectIdentifier: _propTypes.default.string.isRequired,
+
+  /** onAspectChange - callback function that is called to indicate that the aspect has changed */
+  onAspectChange: _propTypes.default.func.isRequired,
+
+  /** differentValues - boolean that indicate if this aspect contain different value from another mirror aspect */
+  differentValues: _propTypes.default.bool,
+
+  /** handleCopy - callback function to be called and copy a value from survivor to victim and vise versa */
+  handleCopy: _propTypes.default.func,
+
+  /** hightHash - the hight of all aspects, this prop is needed to keep the victim and survivor aspects in the same hight */
+  hightHash: _propTypes.default.object.isRequired
+};
+Aspect.defaultProps = {
+  placeholder: "",
+  isMultiSelect: true,
+  showSuggestions: true,
+  showOriginalValues: true,
+  differentValues: false,
+  hightHash: {}
+};
+var _default = Aspect;
+exports.default = _default;

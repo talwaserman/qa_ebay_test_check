@@ -1,0 +1,18 @@
+.category-input-wrapper {
+  label {
+    display: inline-block;
+    width: 110px;
+  }
+
+  .category-path {
+    display: inline-block;
+    font-family: helvetica;
+    font-weight: 300;
+
+    & > span:not(:first-child) {
+      &:before {
+        content: " \003e \a0";
+      }
+    }
+  }
+}

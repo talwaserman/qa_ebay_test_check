@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'antd';
+import CBreadcrumb from './dist/Gizmo/shared/CBreadcrumb';
 
 import logo from './logo.svg';
 import './App.css';
@@ -8,6 +9,7 @@ import 'antd/dist/antd.css';
 function App() {
   return (
     <div className="App">
+      <CBreadcrumb path={['test', 'test2', 'test3']} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

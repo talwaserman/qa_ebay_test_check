@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gizmo shared - RegularField with Metadata 1`] = `
+<div
+  className="regular-field-wrapper"
+>
+  <strong>
+    <label
+      className="aspect-title-wrapper"
+    >
+      <strong>
+        Title
+        <span
+          className="required-icon"
+        >
+          *
+        </span>
+      </strong>
+      <div
+        className="importance-level"
+      >
+        [Required]
+        <span>
+          [M]
+        </span>
+      </div>
+    </label>
+  </strong>
+  <div
+    className="field-value"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    101738591
+  </div>
+</div>
+`;

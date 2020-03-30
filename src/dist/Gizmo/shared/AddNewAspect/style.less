@@ -1,0 +1,75 @@
+.add-new-aspect-wrapper {
+  section,
+  form {
+    margin-bottom: 15px;
+    margin-left: 15px;
+  }
+
+  .unique-warning {
+    color: #ff8f6d;
+    margin-top: 5px;
+  }
+
+  .values-wrapper {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 32px;
+    flex-direction: row;
+    color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    outline: none;
+
+    > span {
+      display: inline-block;
+      height: 24px;
+      vertical-align: middle;
+      white-space: pre;
+      margin: 4px 2px 5px 2px;
+      padding: 1px 5px 3px 10px;
+      overflow: hidden;
+      color: rgba(0, 0, 0, 0.65);
+      background-color: #fafafa;
+      border: 1px solid #e8e8e8;
+      border-radius: 2px;
+      cursor: default;
+      -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      &:first-child {
+        margin-left: 5px;
+      }
+
+      > svg {
+        display: inline-block;
+        color: rgba(0, 0, 0, 0.45);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        vertical-align: middle;
+        font-size: 15px;
+        padding-left: 5px;
+        padding-bottom: 3px;
+        cursor: pointer;
+        -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.75);
+        }
+      }
+    }
+
+    input {
+      border: none;
+      outline: none;
+      height: 25px;
+      margin-top: 3px;
+      margin-left: 5px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.breadcrumb-style {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    
+    i {
+        margin-right: 5px;
+        color: #fff;
+    }
+    font-size: 14px;
+    background:#0a83bf;
+    color: #000;
+    height: 34px;
+    padding: 5px 10px;
+
+    .path-items > span:not(:first-child) {
+        &:before {
+            content: ' \003e \a0'
+        }
+    }
+}

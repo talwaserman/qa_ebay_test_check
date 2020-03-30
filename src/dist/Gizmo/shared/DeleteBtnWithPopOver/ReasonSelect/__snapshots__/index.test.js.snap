@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gizmo shared - ReasonSelect 1`] = `
+<div
+  className="reason-select-wrapper"
+>
+  <div>
+    Delete reason
+  </div>
+  <div
+    className="delete-btn-wrapper"
+  >
+    <button
+      className="ant-btn ant-btn-default"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Not Found
+      </span>
+    </button>
+    <button
+      className="ant-btn ant-btn-default"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Not Applicable
+      </span>
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,58 @@
+.multi-selection-popup-wrapper {
+  width: 550px;
+
+  .add-activity-label,
+  .add-notification-label {
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #6d6d6d;
+    text-align: left;
+  }
+  .add-assigners-label {
+    padding-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #6d6d6d;
+    text-align: left;
+  }
+
+  .activity-type-select {
+    .ant-select {
+      padding-top: 10px;
+      width: 400px;
+    }
+  }
+
+  .notification-type-select {
+    .ant-select {
+      padding-top: 10px;
+      width: 400px;
+    }
+  }
+
+  .ant-select-selection--multiple {
+    white-space: nowrap;
+    height: 100px;
+    overflow: auto;
+  }
+
+  .ant-select-selection--multiple .ant-select-selection__clear,
+  .ant-select-selection--multiple .ant-select-arrow {
+    left: 50px;
+    top: 50px;
+  }
+
+  section.action-btn {
+    margin-top: 25px;
+    flex-flow: row-reverse;
+    display: flex;
+
+    button {
+      margin-left: 10px;
+      min-width: 80px;
+    }
+  }
+}
