@@ -1,33 +1,31 @@
 import React from 'react';
-import { Button } from 'antd';
-import CBreadcrumb from './dist/Gizmo/shared/CBreadcrumb';
+import Duplicates from './dist/Gizmo/pages/DuplicatesPage/Duplicates';
+import { mockDecisions, mockReasons } from './dist/Gizmo/shared/DecisionMaker/mock';
+import {
+  mockSurvivorData,
+  mockVictimArray,
+  mockConfigurationAllEnabled,
+  mockAgent
+} from './dist/Gizmo/pages/DuplicatesPage/Duplicates/mock';
 
-import logo from './logo.svg';
-import './App.css';
 import 'antd/dist/antd.css';
 
 function App() {
   return (
     <div className="App">
-      <CBreadcrumb path={['test', 'test2', 'test3']} />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="btn-wrapper">
-          <Button type="primary">Primary</Button>
-          </div>  
-          
-          Learn React
-        </a>
-      </header>
+      <Duplicates
+          survivorData={mockSurvivorData}
+          victimArray={mockVictimArray}
+          decisions={mockDecisions}
+          reasons={mockReasons}
+          jobTypeConfiguration={mockConfigurationAllEnabled}
+          jobId={2541}
+          rowsDone={{ totalDoneToday: 10, totalDone: 100 }}
+          loggedInUser={mockAgent}
+          rowId={'123445af764e65fb22a16e'}
+          saveTask={() => {}}
+          changeCategory={() => {}}
+        />
     </div>
   );
 }
