@@ -2,6 +2,8 @@
   "name": "qa_ebay_test",
   "version": "0.1.0",
   "private": false,
+  "author": "Tal Waserman <talwaserman@gmail.com>",
+  "description": "website that is used as a QE test at eBay",
   "homepage": "https://talwaserman.github.io/qa_ebay_test",
   "dependencies": {
     "@babel/core": "7.9.0",
