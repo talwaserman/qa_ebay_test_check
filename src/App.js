@@ -1,6 +1,9 @@
 import React from 'react';
+import { Button } from 'antd';
+
 import logo from './logo.svg';
 import './App.css';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
@@ -16,6 +19,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <div className="btn-wrapper">
+          <Button type="primary">Primary</Button>
+          </div>  
+          
           Learn React
         </a>
       </header>
