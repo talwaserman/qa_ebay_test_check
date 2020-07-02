@@ -125,6 +125,12 @@ Object.defineProperty(exports, "RulesTable", {
     return _RulesTable.default;
   }
 });
+Object.defineProperty(exports, "GenericModal", {
+  enumerable: true,
+  get: function get() {
+    return _GenericModal.default;
+  }
+});
 Object.defineProperty(exports, "ControlledSelect", {
   enumerable: true,
   get: function get() {
@@ -171,5 +177,7 @@ var _AddNewAspect = _interopRequireDefault(require("./AddNewAspect"));
 var _CGTable = _interopRequireDefault(require("./CGTable"));
 
 var _RulesTable = _interopRequireDefault(require("./RulesTable"));
+
+var _GenericModal = _interopRequireDefault(require("./GenericModal"));
 
 var _ControlledSelect = _interopRequireDefault(require("./ControlledSelect"));

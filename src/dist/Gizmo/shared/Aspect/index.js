@@ -48,7 +48,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 require("./style.less");
 
 /* eslint-disable */
-var Aspect = _react.default.memo(function AspectWrapper(_ref) {
+var Aspect = /*#__PURE__*/_react.default.memo(function AspectWrapper(_ref) {
   var aspect = _ref.aspect,
       placeholder = _ref.placeholder,
       isMultiSelect = _ref.isMultiSelect,
@@ -114,46 +114,46 @@ var Aspect = _react.default.memo(function AspectWrapper(_ref) {
 
   var showBlankAspect = aspect.alignedWithSurvivor !== undefined && aspect.alignedWithSurvivor === false;
   var blankAspectHight = getBlankAspectHight();
-  return _react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "aspect-outer-wrapper",
     ref: elemRef,
     style: {
       minHeight: hightHash[aspect.aspectName] + 'px'
     }
-  }, isDeleted && _react.default.createElement("div", {
+  }, isDeleted && /*#__PURE__*/_react.default.createElement("div", {
     className: "deleted-aspect"
-  }, "Deleted", _react.default.createElement("span", null, " - ", deleteReason)), showBlankAspect && _react.default.createElement("div", {
+  }, "Deleted", /*#__PURE__*/_react.default.createElement("span", null, " - ", deleteReason)), showBlankAspect && /*#__PURE__*/_react.default.createElement("div", {
     className: "blank-aspect",
     style: {
       height: blankAspectHight
     }
-  }), !showBlankAspect && _react.default.createElement("div", {
+  }), !showBlankAspect && /*#__PURE__*/_react.default.createElement("div", {
     className: styleClasses
-  }, _react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "aspect-title-wrapper"
-  }, _react.default.createElement("label", null, _react.default.createElement("strong", null, AspectTitle, !aspectMetadata.umsAlignedAspect && _react.default.createElement(_tooltip.default, {
+  }, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("strong", null, AspectTitle, !aspectMetadata.umsAlignedAspect && /*#__PURE__*/_react.default.createElement(_tooltip.default, {
     placement: "top",
     title: "Aspect not aligned with UMS"
-  }, _react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     className: "aspect-not-aligned"
-  }, _react.default.createElement(_icon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_icon.default, {
     type: "info-circle"
-  }))), aspectMetadata.isRequired && _react.default.createElement("span", {
+  }))), aspectMetadata.isRequired && /*#__PURE__*/_react.default.createElement("span", {
     className: "required-icon"
-  }, "*"), showSingleWarning && _react.default.createElement(_tooltip.default, {
+  }, "*"), showSingleWarning && /*#__PURE__*/_react.default.createElement(_tooltip.default, {
     placement: "top",
     title: "Single value mode is used with more then one value"
-  }, _react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     className: "single-value-warning"
-  }, _react.default.createElement(_icon.default, {
+  }, /*#__PURE__*/_react.default.createElement(_icon.default, {
     type: "warning"
-  }))))), _react.default.createElement("div", {
+  }))))), /*#__PURE__*/_react.default.createElement("div", {
     className: "importance-level"
-  }, aspectMetadata.levelOfImportance, _react.default.createElement("span", null, aspectMetadata.isMultiValue ? "[M]" : ""))), _react.default.createElement("div", {
+  }, aspectMetadata.levelOfImportance, /*#__PURE__*/_react.default.createElement("span", null, aspectMetadata.isMultiValue ? "[M]" : ""))), /*#__PURE__*/_react.default.createElement("div", {
     className: "input-wrapper"
-  }, _react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "input-inner-wrapper"
-  }, aspectMetadata.isWithUms && _react.default.createElement(_UmsInput.default, {
+  }, aspectMetadata.isWithUms && /*#__PURE__*/_react.default.createElement(_UmsInput.default, {
     suggestedValues: aspect.propertyDecisionContract.suggestedValues,
     umsValues: aspectMetadata.umsValues,
     aspect: aspect,
@@ -161,7 +161,7 @@ var Aspect = _react.default.memo(function AspectWrapper(_ref) {
     aspectIdentifier: aspectIdentifier,
     checkAspectValuesDifference: checkAspectValuesDifference,
     handleCopy: handleInputCopy
-  }), !aspectMetadata.isWithUms && _react.default.createElement(_NoUmsInput.default, {
+  }), !aspectMetadata.isWithUms && /*#__PURE__*/_react.default.createElement(_NoUmsInput.default, {
     suggestedValues: aspect.propertyDecisionContract.suggestedValues,
     aspect: aspect,
     isValueAlreadySelected: isValueAlreadySelected,
@@ -169,40 +169,40 @@ var Aspect = _react.default.memo(function AspectWrapper(_ref) {
     onAspectChange: onAspectChange,
     aspectIdentifier: aspectIdentifier,
     handleCopy: handleInputCopy
-  }), _react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement("div", {
     className: "actions-wrapper"
-  }, _react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "delete-btn-wrapper"
-  }, !isDeleted && _react.default.createElement(_popover.default, {
+  }, !isDeleted && /*#__PURE__*/_react.default.createElement(_popover.default, {
     placement: "top",
-    content: _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_ReasonSelect.default, {
+    content: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_ReasonSelect.default, {
       deleteAspect: deleteAspect
     })),
     trigger: "click",
     visible: isShowingDeletePopover,
     onVisibleChange: onVisibleChange
-  }, _react.default.createElement(_button.default, {
+  }, /*#__PURE__*/_react.default.createElement(_button.default, {
     shape: "circle",
     icon: "delete",
     onClick: handleDeleteButton
-  })), isDeleted && _react.default.createElement(_button.default, {
+  })), isDeleted && /*#__PURE__*/_react.default.createElement(_button.default, {
     shape: "circle",
     icon: "rollback",
     onClick: restoreAspect
-  })))), showSuggestions && _react.default.createElement("div", {
+  })))), showSuggestions && /*#__PURE__*/_react.default.createElement("div", {
     className: "crawling"
   }, "Suggestions: ", " ", crawlingData.map(function (item) {
-    return _react.default.createElement("span", {
+    return /*#__PURE__*/_react.default.createElement("span", {
       className: "crawling-suggestions",
       key: item.value,
       onClick: clickSuggestionHandler
     }, item.value);
-  })), showOriginalValues && _react.default.createElement("div", {
+  })), showOriginalValues && /*#__PURE__*/_react.default.createElement("div", {
     className: "original-values"
-  }, _react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     className: "title"
   }, "Original values:"), currentValues.map(function (item) {
-    return _react.default.createElement("span", {
+    return /*#__PURE__*/_react.default.createElement("span", {
       className: "original-value",
       key: item.value,
       onClick: clickSuggestionHandler
