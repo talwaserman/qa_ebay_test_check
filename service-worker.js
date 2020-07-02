@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/qa_ebay_test_check/precache-manifest.95f72f8b0583c2550f9444f987830c06.js"
+  "/qa_ebay_test_check/precache-manifest.dbec8237d5651d1e4ca0e05aabf47476.js"
 );
 
 self.addEventListener('message', (event) => {
