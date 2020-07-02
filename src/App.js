@@ -3,13 +3,13 @@ import Duplicates from './dist/Gizmo/pages/DuplicatesPage/Duplicates';
 import {
   reasonDuplicateMock,
   mockDuplicateDecisions
-} from './DrawerContentMatching/mock';
+} from './dist/Gizmo/pages/DuplicatesPage/Duplicates/DrawerContentMatching/mock';
 
 import {
   mockConfigurationAllEnabled,
   mockAgent,
   clusterMockData
-} from './mockDuplicates.mock';
+} from './dist/Gizmo/pages/DuplicatesPage/Duplicates/mockDuplicates.mock';
 
 import 'antd/dist/antd.css';
 
