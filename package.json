@@ -1,10 +1,10 @@
 {
-  "name": "qa_ebay_test",
+  "name": "qa_ebay_test_check",
   "version": "0.1.0",
   "private": false,
   "author": "Tal Waserman <talwaserman@gmail.com>",
   "description": "website that is used as a QE test at eBay",
-  "homepage": "https://talwaserman.github.io/qa_ebay_test",
+  "homepage": "https://talwaserman.github.io/qa_ebay_test_check",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
