@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/qa_ebay_test/static/css/main.c6be3951.chunk.css",
-    "main.js": "/qa_ebay_test/static/js/main.493a43a1.chunk.js",
-    "main.js.map": "/qa_ebay_test/static/js/main.493a43a1.chunk.js.map",
-    "runtime-main.js": "/qa_ebay_test/static/js/runtime-main.44d0c10d.js",
-    "runtime-main.js.map": "/qa_ebay_test/static/js/runtime-main.44d0c10d.js.map",
-    "static/css/2.53113f47.chunk.css": "/qa_ebay_test/static/css/2.53113f47.chunk.css",
-    "static/js/2.a4aacc23.chunk.js": "/qa_ebay_test/static/js/2.a4aacc23.chunk.js",
-    "static/js/2.a4aacc23.chunk.js.map": "/qa_ebay_test/static/js/2.a4aacc23.chunk.js.map",
-    "index.html": "/qa_ebay_test/index.html",
-    "precache-manifest.4c19a36a66503b613fe7e0406de27fcb.js": "/qa_ebay_test/precache-manifest.4c19a36a66503b613fe7e0406de27fcb.js",
-    "service-worker.js": "/qa_ebay_test/service-worker.js",
-    "static/css/2.53113f47.chunk.css.map": "/qa_ebay_test/static/css/2.53113f47.chunk.css.map",
-    "static/css/main.c6be3951.chunk.css.map": "/qa_ebay_test/static/css/main.c6be3951.chunk.css.map",
-    "static/js/2.a4aacc23.chunk.js.LICENSE.txt": "/qa_ebay_test/static/js/2.a4aacc23.chunk.js.LICENSE.txt"
+    "main.css": "/qa_ebay_test_check/static/css/main.c6be3951.chunk.css",
+    "main.js": "/qa_ebay_test_check/static/js/main.d638bd76.chunk.js",
+    "main.js.map": "/qa_ebay_test_check/static/js/main.d638bd76.chunk.js.map",
+    "runtime-main.js": "/qa_ebay_test_check/static/js/runtime-main.cc21aaab.js",
+    "runtime-main.js.map": "/qa_ebay_test_check/static/js/runtime-main.cc21aaab.js.map",
+    "static/css/2.53113f47.chunk.css": "/qa_ebay_test_check/static/css/2.53113f47.chunk.css",
+    "static/js/2.2778d0f5.chunk.js": "/qa_ebay_test_check/static/js/2.2778d0f5.chunk.js",
+    "static/js/2.2778d0f5.chunk.js.map": "/qa_ebay_test_check/static/js/2.2778d0f5.chunk.js.map",
+    "index.html": "/qa_ebay_test_check/index.html",
+    "precache-manifest.95f72f8b0583c2550f9444f987830c06.js": "/qa_ebay_test_check/precache-manifest.95f72f8b0583c2550f9444f987830c06.js",
+    "service-worker.js": "/qa_ebay_test_check/service-worker.js",
+    "static/css/2.53113f47.chunk.css.map": "/qa_ebay_test_check/static/css/2.53113f47.chunk.css.map",
+    "static/css/main.c6be3951.chunk.css.map": "/qa_ebay_test_check/static/css/main.c6be3951.chunk.css.map",
+    "static/js/2.2778d0f5.chunk.js.LICENSE.txt": "/qa_ebay_test_check/static/js/2.2778d0f5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.44d0c10d.js",
+    "static/js/runtime-main.cc21aaab.js",
     "static/css/2.53113f47.chunk.css",
-    "static/js/2.a4aacc23.chunk.js",
+    "static/js/2.2778d0f5.chunk.js",
     "static/css/main.c6be3951.chunk.css",
-    "static/js/main.493a43a1.chunk.js"
+    "static/js/main.d638bd76.chunk.js"
   ]
 }
