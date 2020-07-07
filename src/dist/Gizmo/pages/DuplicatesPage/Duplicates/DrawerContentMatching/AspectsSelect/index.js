@@ -70,6 +70,6 @@ AspectsSelect.propTypes = {
   updateReason: _propTypes.default.func.isRequired,
 
   /** defaultValue - initial selected value to show in the Aspect dropdown */
-  defaultValue: _propTypes.default.oneOfType([_propTypes.default.bool, _propTypes.default.string])
+  defaultValue: _propTypes.default.oneOfType([_propTypes.default.bool, _propTypes.default.array])
 };
 AspectsSelect.defaultProps = {};

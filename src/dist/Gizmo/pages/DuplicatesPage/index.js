@@ -369,7 +369,7 @@ function DuplicatesPage(_ref) {
             mandatory: false
           },
           reasonDetails: {
-            value: (0, _get.default)(item, 'entities[1].prodDec.decisionContract.reasonDetails', ''),
+            value: (0, _get.default)(item, 'entities[1].prodDec.decisionContract.reasonDetails', []),
             mandatory: false
           },
           observation: {

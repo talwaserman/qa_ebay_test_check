@@ -267,11 +267,7 @@ function DrawerContentDuplicate(_ref) {
     },
     disabled: disablebeforeObservation,
     className: selectedOption === 'option3' ? 'selected-btn op-3' : ''
-  }, optionToDescisionMap['option3'])), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_button.default, {
-    className: "submit-btn",
-    onClick: onSubmit,
-    disabled: shouldDisableSubmit
-  }, "Submit")))), entitiesArray.length > 1 && /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("b", null, "Next Cluster:")), /*#__PURE__*/_react.default.createElement("div", {
+  }, optionToDescisionMap['option3'])), /*#__PURE__*/_react.default.createElement("div", null))), entitiesArray.length > 1 && /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("b", null, "Next Cluster:")), /*#__PURE__*/_react.default.createElement("div", {
     className: "cluster-section-wrapper"
   }, /*#__PURE__*/_react.default.createElement(_button.default, {
     className: "get-next-cluster",
@@ -418,17 +414,9 @@ function DrawerContentDuplicate(_ref) {
       setTrackSubmit(_objectSpread(_objectSpread({}, trackSubmit), {}, {
         rowIds: [].concat((0, _toConsumableArray2.default)(trackSubmit.rowIds), [rowId])
       }));
-      var nextRowIds = (0, _xor.default)(clusterRowIds, [].concat((0, _toConsumableArray2.default)(trackSubmit.rowIds), [rowId]));
-
-      if (nextRowIds[0]) {
-        for (var i = 0; i < clusterRowIds.length; i++) {
-          if (clusterRowIds[i] === nextRowIds[0]) {
-            setPage(i);
-            return;
-          }
-        }
-      }
     }
+
+    moveToNextUnSubmitedPair();
 
     _notification2.default.success({
       message: "Action Success",
@@ -460,6 +448,19 @@ function DrawerContentDuplicate(_ref) {
 
     if (decisions[page].decisionInfo.sendToSupervisor === true && entitiesArray.length > 1) {
       removeSubmittedData();
+    }
+  }
+
+  function moveToNextUnSubmitedPair() {
+    var nextRowIds = (0, _xor.default)(clusterRowIds, [].concat((0, _toConsumableArray2.default)(trackSubmit.rowIds), [rowId]));
+
+    if (nextRowIds[0]) {
+      for (var i = 0; i < clusterRowIds.length; i++) {
+        if (clusterRowIds[i] === nextRowIds[0]) {
+          setPage(i);
+          break;
+        }
+      }
     }
   }
 

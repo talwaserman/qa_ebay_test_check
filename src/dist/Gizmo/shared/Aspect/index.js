@@ -17,13 +17,13 @@ require("antd/es/button/style/css");
 
 var _button = _interopRequireDefault(require("antd/es/button"));
 
-require("antd/es/tooltip/style/css");
-
-var _tooltip = _interopRequireDefault(require("antd/es/tooltip"));
-
 require("antd/es/icon/style/css");
 
 var _icon = _interopRequireDefault(require("antd/es/icon"));
+
+require("antd/es/tooltip/style/css");
+
+var _tooltip = _interopRequireDefault(require("antd/es/tooltip"));
 
 require("antd/es/notification/style/css");
 
@@ -50,17 +50,14 @@ require("./style.less");
 /* eslint-disable */
 var Aspect = /*#__PURE__*/_react.default.memo(function AspectWrapper(_ref) {
   var aspect = _ref.aspect,
-      placeholder = _ref.placeholder,
-      isMultiSelect = _ref.isMultiSelect,
       showSuggestions = _ref.showSuggestions,
       showOriginalValues = _ref.showOriginalValues,
       aspectIdentifier = _ref.aspectIdentifier,
       onAspectChange = _ref.onAspectChange,
       differentValues = _ref.differentValues,
       handleCopy = _ref.handleCopy,
-      hightHash = _ref.hightHash,
-      updateAspectHights = _ref.updateAspectHights;
-  var elemRef = (0, _react.useRef)(null);
+      showBlankAspect = _ref.showBlankAspect,
+      blankAspectHight = _ref.blankAspectHight;
 
   var _useState = (0, _react.useState)(isValuesChanged()),
       _useState2 = (0, _slicedToArray2.default)(_useState, 2),
@@ -77,23 +74,10 @@ var Aspect = /*#__PURE__*/_react.default.memo(function AspectWrapper(_ref) {
       isShowingDeletePopover = _useState6[0],
       updateDeletePopover = _useState6[1];
 
-  var getBlankAspectHight = (0, _react.useCallback)(function () {
-    if (showSuggestions && showOriginalValues) {
-      return '94px';
-    } else if (showSuggestions || showOriginalValues) {
-      return '73px';
-    } else {
-      return '59px';
-    }
-  }, [showSuggestions, showOriginalValues]);
   (0, _react.useEffect)(function () {
     verifyMultiValueMode((0, _toConsumableArray2.default)(aspect.propertyDecisionContract.suggestedValues));
     updateDeletePopover(false);
-    updateAspectHights(aspect.aspectName, (elemRef.current || {}).offsetHeight);
   }, [aspect]);
-  (0, _react.useEffect)(function () {
-    updateAspectHights(aspect.aspectName, (elemRef.current || {}).offsetHeight);
-  }, [showOriginalValues, showSuggestions]);
   var AspectTitle = aspect.aspectName;
   var currentValues = aspect.currentValues;
   var crawlingData = aspect.crawlingData.values; //AspectMetadata information which extracted and calculated from aspectInformation // 
@@ -108,18 +92,10 @@ var Aspect = /*#__PURE__*/_react.default.memo(function AspectWrapper(_ref) {
       message: title,
       description: message
     });
-  }; // if the aspect that we present contain this key with value false than we should hide it from the screen
-  // because this aspect is not available for that product
+  };
 
-
-  var showBlankAspect = aspect.alignedWithSurvivor !== undefined && aspect.alignedWithSurvivor === false;
-  var blankAspectHight = getBlankAspectHight();
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "aspect-outer-wrapper",
-    ref: elemRef,
-    style: {
-      minHeight: hightHash[aspect.aspectName] + 'px'
-    }
+    className: "aspect-outer-wrapper"
   }, isDeleted && /*#__PURE__*/_react.default.createElement("div", {
     className: "deleted-aspect"
   }, "Deleted", /*#__PURE__*/_react.default.createElement("span", null, " - ", deleteReason)), showBlankAspect && /*#__PURE__*/_react.default.createElement("div", {
@@ -131,7 +107,10 @@ var Aspect = /*#__PURE__*/_react.default.memo(function AspectWrapper(_ref) {
     className: styleClasses
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "aspect-title-wrapper"
-  }, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("strong", null, AspectTitle, !aspectMetadata.umsAlignedAspect && /*#__PURE__*/_react.default.createElement(_tooltip.default, {
+  }, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("strong", null, /*#__PURE__*/_react.default.createElement(_tooltip.default, {
+    placement: "top",
+    title: AspectTitle
+  }, (0, _utils.shortedText)(AspectTitle, 18)), !aspectMetadata.umsAlignedAspect && /*#__PURE__*/_react.default.createElement(_tooltip.default, {
     placement: "top",
     title: "Aspect not aligned with UMS"
   }, /*#__PURE__*/_react.default.createElement("span", {
@@ -318,14 +297,8 @@ var Aspect = /*#__PURE__*/_react.default.memo(function AspectWrapper(_ref) {
 });
 
 Aspect.propTypes = {
-  /** Placeholder telling the user what should be placed in this input */
-  placeholder: _propTypes.default.string,
-
   /** Aspect data required to show that input field */
   aspect: _propTypes.default.object.isRequired,
-
-  /** is this aspect multi select */
-  isMultiSelect: _propTypes.default.bool,
 
   /** should show suggestions */
   showSuggestions: _propTypes.default.bool,
@@ -340,18 +313,12 @@ Aspect.propTypes = {
   differentValues: _propTypes.default.bool,
 
   /** handleCopy - callback function to be called and copy a value from survivor to victim and vise versa */
-  handleCopy: _propTypes.default.func,
-
-  /** hightHash - the hight of all aspects, this prop is needed to keep the victim and survivor aspects in the same hight */
-  hightHash: _propTypes.default.object.isRequired
+  handleCopy: _propTypes.default.func
 };
 Aspect.defaultProps = {
-  placeholder: "",
-  isMultiSelect: true,
   showSuggestions: true,
   showOriginalValues: true,
-  differentValues: false,
-  hightHash: {}
+  differentValues: false
 };
 var _default = Aspect;
 exports.default = _default;

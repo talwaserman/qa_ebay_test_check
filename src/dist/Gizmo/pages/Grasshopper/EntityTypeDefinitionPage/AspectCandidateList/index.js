@@ -99,7 +99,7 @@ function AspectCandidateList(_ref) {
       searchVal = _useState6[0],
       setSearchVal = _useState6[1];
 
-  var _useState7 = (0, _react.useState)(['added', 'mapped', 'rejected']),
+  var _useState7 = (0, _react.useState)(['added', 'mapped', 'rejected', 'notReviewed']),
       _useState8 = (0, _slicedToArray2.default)(_useState7, 2),
       filters = _useState8[0],
       updateFilters = _useState8[1];
@@ -109,9 +109,9 @@ function AspectCandidateList(_ref) {
       updateContext = _useContext.updateContext;
 
   var aspectListNamesPerLocal = contextState.aspectList.filter(function (item) {
-    return !item.newAspect && item[contextState.selectedLocal];
+    return !item.newAspect && item.aspectPerLocal[contextState.selectedLocal];
   }).map(function (item) {
-    return item.aspectPerLocal[contextState.selectedLocal].translation;
+    return item.aspectPerLocal[contextState.selectedLocal].translation.value;
   });
   (0, _react.useEffect)(function () {
     updateContext({
@@ -236,7 +236,9 @@ function AspectCandidateList(_ref) {
     }).filter(function (item) {
       return !filters.includes('added') ? !aspectListNamesPerLocal.includes(item.name) : true;
     }).filter(function (item) {
-      return !filters.includes('mapped') ? !item.decision.mapTo : true;
+      return !filters.includes('mapped') ? !(0, _get.default)(item, 'decision.mapTo.aspectName') || aspectListNamesPerLocal.includes(item.name) : true;
+    }).filter(function (item) {
+      return !filters.includes('notReviewed') ? (0, _get.default)(item, 'decision.mapTo.aspectName') || aspectListNamesPerLocal.includes(item.name) || item.decision.rejected : true;
     }).filter(function (item) {
       return item.name.toLowerCase().includes(searchVal.toLowerCase());
     });

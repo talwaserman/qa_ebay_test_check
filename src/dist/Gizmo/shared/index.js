@@ -95,6 +95,12 @@ Object.defineProperty(exports, "Aspect", {
     return _Aspect.default;
   }
 });
+Object.defineProperty(exports, "AspectWrapper", {
+  enumerable: true,
+  get: function get() {
+    return _AspectWrapper.default;
+  }
+});
 Object.defineProperty(exports, "NavigationPopOver", {
   enumerable: true,
   get: function get() {
@@ -167,6 +173,8 @@ var _TotalRowsDone = _interopRequireDefault(require("./TotalRowsDone"));
 var _ImageList = _interopRequireDefault(require("./ImageList"));
 
 var _Aspect = _interopRequireDefault(require("./Aspect"));
+
+var _AspectWrapper = _interopRequireDefault(require("./AspectWrapper"));
 
 var _NavigationPopOver = _interopRequireDefault(require("./NavigationPopOver"));
 

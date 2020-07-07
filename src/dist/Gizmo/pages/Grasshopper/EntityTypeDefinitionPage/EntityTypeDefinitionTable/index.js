@@ -51,10 +51,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _cloneDeep = _interopRequireDefault(require("lodash/cloneDeep"));
 
-var _socketio = _interopRequireDefault(require("../../../../socketio"));
-
-var _utils = require("../../../../utils");
-
 var _get = _interopRequireDefault(require("lodash/get"));
 
 var _isEqual = _interopRequireDefault(require("lodash/isEqual"));
@@ -187,7 +183,6 @@ function EntityTypeDefinitionTable(_ref) {
         assignedSites: assignedSites
       })
     });
-    initializeSocketIO();
   }, []);
   (0, _react.useEffect)(function () {
     var columnConfig = [{
@@ -985,40 +980,6 @@ function EntityTypeDefinitionTable(_ref) {
       // it depends the assigned sites
       !aspect.newAspect && (stage === 'Aspect Design' || contextState.assignedSites.includes(local) && local !== 'US' || contextState.isLocked && local === 'US')
     );
-  }
-
-  function initializeSocketIO() {
-    var loggedInUser = (0, _utils.getLoggedInUser)();
-    var identifier = rowId || '123';
-
-    _socketio.default.emit('transmit', {
-      type: 'new-user',
-      payload: {
-        rowId: identifier,
-        user: loggedInUser
-      }
-    });
-
-    _socketio.default.on('new-user', function (data) {
-      var _data$payload = data.payload,
-          user = _data$payload.user,
-          rowId = _data$payload.rowId;
-      console.log("".concat(user, " entered channel ").concat(rowId));
-    });
-
-    _socketio.default.on('et-update', function (data) {
-      var loggedInUser = (0, _utils.getLoggedInUser)();
-      var _data$payload2 = data.payload,
-          user = _data$payload2.user,
-          ETData = _data$payload2.ETData;
-
-      if (user !== loggedInUser) {
-        updateContext({
-          type: 'update',
-          payload: ETData
-        });
-      }
-    });
   }
 }
 

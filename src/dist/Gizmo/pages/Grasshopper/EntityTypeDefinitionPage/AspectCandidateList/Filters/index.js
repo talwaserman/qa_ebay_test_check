@@ -36,13 +36,7 @@ var Content = function Content(_ref) {
   var _useState = (0, _react.useState)(initialValues),
       _useState2 = (0, _slicedToArray2.default)(_useState, 2),
       checkedList = _useState2[0],
-      setCheckList = _useState2[1]; // notReviewed - checkbox that is used to switch all other checkboxes.
-
-
-  var _useState3 = (0, _react.useState)(false),
-      _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
-      notReviewed = _useState4[0],
-      setNotReviewed = _useState4[1];
+      setCheckList = _useState2[1];
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_checkbox.default.Group, {
     className: "filters-inner-wrapper",
@@ -60,33 +54,16 @@ var Content = function Content(_ref) {
     className: "label-wrapper",
     value: "mapped",
     checked: checkedList.includes('mapped')
-  }, "Show Mapped")), /*#__PURE__*/_react.default.createElement(_checkbox.default, {
+  }, "Show Mapped"), /*#__PURE__*/_react.default.createElement(_checkbox.default, {
     className: "label-wrapper",
-    value: "Not Reviewed",
-    checked: notReviewed,
-    onChange: onChangeNotReviewed
-  }, "Show Not Reviewed"));
+    value: "notReviewed",
+    checked: checkedList.includes('notReviewed')
+  }, "Show Not Reviewed")));
 
   function onChange(values) {
     setCheckList(values); //update inner state
 
     updateFilters(values); //updat outer state
-
-    if (values.length === 0) {
-      setNotReviewed(true);
-    }
-  }
-
-  function onChangeNotReviewed() {
-    if (!notReviewed) {
-      setCheckList([]);
-      updateFilters([]); //updat outer state
-    } else {
-      setCheckList(['added', 'mapped', 'rejected']);
-      updateFilters(['added', 'mapped', 'rejected']); //updat outer state
-    }
-
-    setNotReviewed(!notReviewed);
   }
 };
 

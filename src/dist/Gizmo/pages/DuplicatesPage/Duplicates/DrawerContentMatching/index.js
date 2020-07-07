@@ -235,11 +235,7 @@ function DrawerContentMatching(_ref) {
     resonType: "reason",
     selectedDecision: decisions[page].selectedOption,
     jobType: jobType
-  }), /*#__PURE__*/_react.default.createElement(_button.default, {
-    className: "submit-btn",
-    onClick: onSubmit,
-    disabled: shouldDisableSubmit
-  }, "Submit"))), entitiesArray.length > 1 && /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("b", null, "Next Cluster:")), /*#__PURE__*/_react.default.createElement("div", {
+  }))), entitiesArray.length > 1 && /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("b", null, "Next Cluster:")), /*#__PURE__*/_react.default.createElement("div", {
     className: "cluster-section-wrapper"
   }, /*#__PURE__*/_react.default.createElement(_button.default, {
     className: "get-next-cluster",
@@ -354,16 +350,7 @@ function DrawerContentMatching(_ref) {
       setTrackSubmit([].concat((0, _toConsumableArray2.default)(trackSubmit), [rowId]));
     }
 
-    var nextRowIds = (0, _xor.default)(clusterRowIds, [].concat((0, _toConsumableArray2.default)(trackSubmit), [rowId]));
-
-    if (nextRowIds[0]) {
-      for (var i = 0; i < clusterRowIds.length; i++) {
-        if (clusterRowIds[i] === nextRowIds[0]) {
-          setPage(i);
-          return;
-        }
-      }
-    }
+    moveToNextUnSubmitedPair();
 
     _notification2.default.success({
       message: "Action Success",
@@ -396,6 +383,19 @@ function DrawerContentMatching(_ref) {
     if (decisions[page].decisionInfo.sendToSupervisor === true && entitiesArray.length > 1) {
       //remove a single pair from the cluster when the send to supervisor checkbox is selected
       removeSubmittedData();
+    }
+  }
+
+  function moveToNextUnSubmitedPair() {
+    var nextRowIds = (0, _xor.default)(clusterRowIds, [].concat((0, _toConsumableArray2.default)(trackSubmit), [rowId]));
+
+    if (nextRowIds[0]) {
+      for (var i = 0; i < clusterRowIds.length; i++) {
+        if (clusterRowIds[i] === nextRowIds[0]) {
+          setPage(i);
+          break;
+        }
+      }
     }
   }
 

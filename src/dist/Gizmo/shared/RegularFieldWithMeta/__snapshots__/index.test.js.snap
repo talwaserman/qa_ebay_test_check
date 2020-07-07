@@ -9,7 +9,12 @@ exports[`gizmo shared - RegularField with Metadata 1`] = `
       className="aspect-title-wrapper"
     >
       <strong>
-        Title
+        <span
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          Title
+        </span>
         <span
           className="required-icon"
         >

@@ -380,21 +380,23 @@ function Duplicates(_ref) {
       if (!shouldRenderAspect(aspectData, re_hash)) {
         return false;
       } else {
-        return /*#__PURE__*/_react.default.createElement(_shared.Aspect, {
+        return /*#__PURE__*/_react.default.createElement(_shared.AspectWrapper, {
+          hightHash: hightHash,
+          aspect: aspectData,
+          showSuggestions: showSuggestions,
+          showOriginalValues: showOriginalValues,
+          updateAspectHights: updateAspectHights
+        }, /*#__PURE__*/_react.default.createElement(_shared.Aspect, {
           key: "survivor-aspect-".concat(index),
           aspect: aspectData,
-          placeholder: '',
-          isMultiSelect: true,
           showSuggestions: showSuggestions,
           showOriginalValues: showOriginalValues,
           onAspectChange: onAspectChangeSurvivor,
           aspectIdentifier: key,
           differentValues: checkDiffValues(aspectData, key),
           clusterPage: page,
-          handleCopy: handleCopySurvivor,
-          hightHash: hightHash,
-          updateAspectHights: updateAspectHights
-        });
+          handleCopy: handleCopySurvivor
+        }));
       }
     });
   })), !isEnabledForCuration && /*#__PURE__*/_react.default.createElement("div", null, le_aspectKeys.map(function (key) {
@@ -404,6 +406,12 @@ function Duplicates(_ref) {
       } else {
         return /*#__PURE__*/_react.default.createElement("div", {
           className: "attributes-read-only-section"
+        }, /*#__PURE__*/_react.default.createElement(_shared.AspectWrapper, {
+          hightHash: hightHash,
+          aspect: aspectData,
+          showSuggestions: showSuggestions,
+          showOriginalValues: showOriginalValues,
+          updateAspectHights: updateAspectHights
         }, /*#__PURE__*/_react.default.createElement(_shared.FieldWithExtraInformation, {
           label: aspectData.aspectName,
           value: aspectData.currentValues.map(function (v) {
@@ -413,7 +421,7 @@ function Duplicates(_ref) {
           isDifferentValue: checkDiffValues(aspectData, key),
           updateValue: function updateValue() {},
           metadata: aspectData.aspectInformation
-        }));
+        })));
       }
     });
   })), /*#__PURE__*/_react.default.createElement("section", {
@@ -546,21 +554,23 @@ function Duplicates(_ref) {
       if (!shouldRenderAspect(aspectData, le_hash)) {
         return false;
       } else {
-        return /*#__PURE__*/_react.default.createElement(_shared.Aspect, {
+        return /*#__PURE__*/_react.default.createElement(_shared.AspectWrapper, {
+          hightHash: hightHash,
+          aspect: aspectData,
+          showSuggestions: showSuggestions,
+          showOriginalValues: showOriginalValues,
+          updateAspectHights: updateAspectHights
+        }, /*#__PURE__*/_react.default.createElement(_shared.Aspect, {
           key: "victim-aspect-".concat(index),
           aspect: aspectData,
-          placeholder: '',
-          isMultiSelect: true,
           showSuggestions: showSuggestions,
           showOriginalValues: showOriginalValues,
           onAspectChange: onAspectChangeVictim,
           aspectIdentifier: key,
           differentValues: checkDiffValues(aspectData, key),
           clusterPage: page,
-          handleCopy: handleCopyVictim,
-          hightHash: hightHash,
-          updateAspectHights: updateAspectHights
-        });
+          handleCopy: handleCopyVictim
+        }));
       }
     });
   })), !isEnabledForCuration && /*#__PURE__*/_react.default.createElement("div", null, re_aspectKeys.map(function (key) {
@@ -570,6 +580,12 @@ function Duplicates(_ref) {
       } else {
         return /*#__PURE__*/_react.default.createElement("div", {
           className: "attributes-read-only-section"
+        }, /*#__PURE__*/_react.default.createElement(_shared.AspectWrapper, {
+          hightHash: hightHash,
+          aspect: aspectData,
+          showSuggestions: showSuggestions,
+          showOriginalValues: showOriginalValues,
+          updateAspectHights: updateAspectHights
         }, /*#__PURE__*/_react.default.createElement(_shared.FieldWithExtraInformation, {
           label: aspectData.aspectName,
           value: aspectData.currentValues.map(function (v) {
@@ -579,7 +595,7 @@ function Duplicates(_ref) {
           isDifferentValue: checkDiffValues(aspectData, key),
           updateValue: function updateValue() {},
           metadata: aspectData.aspectInformation
-        }));
+        })));
       }
     });
   })))), /*#__PURE__*/_react.default.createElement(_GenericModal.default, {
@@ -988,12 +1004,6 @@ function Duplicates(_ref) {
     return hightHash;
   }
 
-  function handleVTitleChange(newValue) {
-    var tempArray = Object.assign([], entitiesArray);
-    tempArray[page].product.groupToAspectsMap.productTitle = newValue;
-    setEntitiesArray(tempArray);
-  }
-
   function updateDecisions(updatedDecision) {
     function updateCluster(page, cluster, updatedDecision, isLeftItem) {
       var rightId = updatedDecision.rightEntityId;
@@ -1255,7 +1265,7 @@ function Duplicates(_ref) {
     //aspect should be hidden if empty (on both products) and showEmptyAspects flag is false
     if (hash[aspect.aspectName] && isAspectEmptyOnBothProducts(aspect, hash) && !showEmptyAspects) {
       return false;
-    } else if (!aspect.propertyDecisionContract.suggestedValues.length && !showEmptyAspects) {
+    } else if (!hash[aspect.aspectName] && !aspect.propertyDecisionContract.suggestedValues.length && !showEmptyAspects) {
       //aspect exists only on one of the products
       return false;
     }

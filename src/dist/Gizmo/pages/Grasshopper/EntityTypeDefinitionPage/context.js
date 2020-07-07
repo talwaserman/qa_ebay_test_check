@@ -11,19 +11,9 @@ exports.PageContextProvider = exports.ETPageContext = void 0;
 
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _react = _interopRequireWildcard(require("react"));
 
 var _cloneDeep = _interopRequireDefault(require("lodash/cloneDeep"));
-
-var _socketio = _interopRequireDefault(require("../../../socketio"));
-
-var _utils = require("../../../utils");
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var initialState = {
   aspectList: [],
@@ -48,18 +38,6 @@ var aspectListReducer = function aspectListReducer(state, action) {
       return action.payload;
 
     case 'update-existing-aspect':
-      var loggedInUser = (0, _utils.getLoggedInUser)();
-
-      _socketio.default.emit('transmit', {
-        type: 'et-update',
-        payload: {
-          user: loggedInUser,
-          ETData: _objectSpread(_objectSpread({}, action.payload), {}, {
-            isLocked: false
-          })
-        }
-      });
-
       return action.payload;
 
     case 'update-local':
