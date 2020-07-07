@@ -2,7 +2,7 @@
 
 ## About this project
 This project is used as a test for QE candidates at eBay
-Open [https://talwaserman.github.io/qa_ebay_test/index.html](https://talwaserman.github.io/qa_ebay_test/index.html)
+Open [https://talwaserman.github.io/qa_ebay_test_check/index.html](https://talwaserman.github.io/qa_ebay_test_check/index.html)
 
 ## Available Scripts
 1. yarn start - will run the development mode.
